@@ -1,0 +1,56 @@
+<section class="request-form-wrapper">
+  <h2 class="form-title">Запит на послугу</h2>
+  <p class="form-subtitle">Залиште свої дані, і адміністратор рецепції зв'яжеться з вами найближчим часом.</p>
+
+  <form id="requestForm" class="request-form" novalidate>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">Ім'я</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Введіть ім'я" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Прізвище</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Введіть прізвище" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Електронна пошта</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Номер телефону</label>
+        <input type="tel" id="phone" name="phone" placeholder="+380XXXXXXXXX" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="service">Послуга</label>
+      <select id="service" name="service" required>
+        <option value="">— Оберіть послугу —</option>
+        <option value="base">Базове утримання</option>
+        <option value="grooming">Груминг</option>
+        <option value="walking">Індивідуальний вигул</option>
+        <option value="special">Спецдогляд</option>
+        <option value="social">Соціалізація</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Зміст запиту</label>
+      <textarea id="message" name="message" rows="4" placeholder="Вид і кличка тварини, бажані дати перебування, особливості раціону" required></textarea>
+    </div>
+
+    <p class="form-error" id="formError"></p>
+
+    <div class="form-buttons">
+      <button type="submit" class="btn submit-button">Надіслати запит</button>
+      <button type="button" class="btn btn-outline clear-button" id="clearButton">Очистити форму</button>
+    </div>
+
+  </form>
+</section>

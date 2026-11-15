@@ -9,22 +9,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800&amp;family=Rubik+Bubbles&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/modal.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="logo" href="#top">
-        <img src="images/logo.png" alt="Happy Paws" width="500" height="500">
+        <img src="images/icon-paw.svg" alt="" width="120" height="120">
+        <span class="logo-text">Happy Paws</span>
       </a>
 
       <nav class="main-nav">
         <h2 class="visually-hidden">Навігація по сторінці</h2>
-        <ul>
+        <ul class="nav-list">
           <li><a href="#about">Про нас</a></li>
-          <li><a href="#services">Послуги</a></li>
+
+          <li class="dropdown">
+            <button type="button" class="dropdown-toggle" id="servicesMenuButton" aria-expanded="false" aria-controls="servicesMenu">
+              Послуги
+              <span class="dropdown-arrow" aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown-menu" id="servicesMenu">
+              <li><a href="#services">Базове утримання</a></li>
+              <li><a href="#services">Груминг</a></li>
+              <li><a href="#services">Індивідуальний вигул</a></li>
+              <li><a href="#services">Спецдогляд</a></li>
+              <li><a href="#services">Соціалізація</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#guests">Постояльці</a></li>
           <li><a href="#prices">Ціни</a></li>
-          <li><a href="#booking">Як забронювати</a></li>
+          <li><a href="#booking">Бронювання</a></li>
           <li><a href="#contacts">Контакти</a></li>
         </ul>
       </nav>
@@ -42,7 +60,7 @@
             Безпечна передержка, турбота та щоденна увага професійних доглядачів,
             поки ви у відпустці чи відрядженні.
           </p>
-          <a class="btn" href="#booking">Забронювати місце</a>
+          <button type="button" class="btn" id="openModalButton">Замовити консультацію</button>
           <a class="btn btn-outline" href="#services">Наші послуги</a>
         </div>
         <div class="hero-picture">
@@ -60,7 +78,7 @@
       </svg>
     </div>
 
-    <section id="about" class="section section-cream">
+    <section id="about" class="section section-cream reveal reveal-down-to-up">
       <div class="container about-layout">
         <div class="about-text">
           <h2>Про зооготель</h2>
@@ -99,7 +117,7 @@
       </svg>
     </div>
 
-    <section id="services" class="section section-pink">
+    <section id="services" class="section section-pink reveal reveal-down-to-up">
       <div class="container">
         <h2>Наші послуги</h2>
 
@@ -157,7 +175,158 @@
       </svg>
     </div>
 
-    <section id="prices" class="section section-cream">
+    <section id="benefits" class="section section-cream reveal reveal-down-to-up">
+      <div class="container">
+        <h2>Наші переваги</h2>
+
+        <div class="benefits">
+          <article class="benefit">
+            <img class="benefit-photo" src="images/benefit-1.jpg" alt="Смугасте кошеня дрімає на ковдрі" loading="lazy">
+            <div class="benefit-text">
+              <h3>Окремий бокс для кожного гостя</h3>
+              <p>
+                Коти та собаки живуть окремо, тому тихі тварини не нервуються
+                через галасливих сусідів. Система контролює перетин дат, тому
+                один бокс ніколи не бронюється двічі.
+              </p>
+            </div>
+          </article>
+
+          <article class="benefit">
+            <img class="benefit-photo" src="images/benefit-2.jpg" alt="Цуценя такси на повідку під час прогулянки" loading="lazy">
+            <div class="benefit-text">
+              <h3>Прогулянки та ігри щодня</h3>
+              <p>
+                Для активних собак доступні додаткові прогулянки з доглядачем,
+                а для соціальних тварин — спільні ігри під наглядом.
+              </p>
+            </div>
+          </article>
+
+          <article class="benefit">
+            <img class="benefit-photo" src="images/benefit-3.jpg" alt="Пухнастий песик спить на пледі" loading="lazy">
+            <div class="benefit-text">
+              <h3>Журнал догляду та звіти</h3>
+              <p>
+                Доглядач щодня фіксує годування, вигул, поведінку та самопочуття.
+                Ви отримуєте звіт і знаєте, як минув день вашого улюбленця.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave wave-2" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" focusable="false">
+        <path class="ribbon-1" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z"/>
+        <path class="ribbon-2" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,34)"/>
+        <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
+      </svg>
+    </div>
+
+    <section id="guests" class="section section-pink reveal reveal-down-to-up">
+      <div class="container">
+        <h2>Щасливі хвостики, які вже побували в нас</h2>
+
+        <div class="gallery">
+          <figure class="guest-card">
+            <img class="guest-photo" src="images/pet-visitor.jpg" alt="Пухнастий песик сидить на лавці" loading="lazy">
+            <figcaption>Мушка, 1 рік</figcaption>
+          </figure>
+
+          <figure class="guest-card">
+            <img class="guest-photo pos-top" src="images/cat-ginger.jpg" alt="Рудий кіт мружиться" loading="lazy">
+            <figcaption>Персик, 2 роки</figcaption>
+          </figure>
+
+          <figure class="guest-card">
+            <img class="guest-photo" src="images/dog-sharpei.jpg" alt="Шарпей відпочиває на дивані" loading="lazy">
+            <figcaption>Граф, 4 роки</figcaption>
+          </figure>
+
+          <figure class="guest-card">
+            <img class="guest-photo" src="images/cat-smiling.jpg" alt="Чорно-білий кіт усміхається" loading="lazy">
+            <figcaption>Мурка, 3 роки</figcaption>
+          </figure>
+
+          <figure class="guest-card">
+            <img class="guest-photo pos-top" src="images/dog-cocker.jpg" alt="Чорний кокер-спанієль з рожевим бантиком" loading="lazy">
+            <figcaption>Боня, 2 роки</figcaption>
+          </figure>
+
+          <figure class="guest-card">
+            <img class="guest-photo" src="images/cat-oriental.jpg" alt="Орієнтальна кішка з великими вухами" loading="lazy">
+            <figcaption>Ліра, 2 роки</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section section-pink section-tight reveal reveal-down-to-up">
+      <div class="container">
+        <div class="reviews-intro">
+          <img class="hint-arrow" src="images/arrow-down.svg" alt="" width="220" height="210">
+          <h2>А ось і відгуки їхніх власників</h2>
+        </div>
+
+        <div class="reviews">
+          <article class="review">
+            <blockquote>
+              <p>«Мушка вперше залишилася без нас, і я боялася, що вона сумуватиме. А нам щодня надсилали фото, де вона всміхається на лавці у дворі.»</p>
+            </blockquote>
+            <p class="review-author">Ірина, власниця Мушки</p>
+          </article>
+
+          <article class="review">
+            <blockquote>
+              <p>«Персик боїться чужих людей, але в окремому боксі заспокоївся за день. Доглядачі врахували всі зауваження щодо раціону.»</p>
+            </blockquote>
+            <p class="review-author">Андрій, власник Персика</p>
+          </article>
+
+          <article class="review">
+            <blockquote>
+              <p>«Граф звик спати на дивані, і тут йому дали м'яку підстилку в боксі. Забирали спокійного й ситого пса.»</p>
+            </blockquote>
+            <p class="review-author">Марія, власниця Графа</p>
+          </article>
+
+          <article class="review">
+            <blockquote>
+              <p>«Зручно, що вартість рахують одразу з усіма послугами. При виїзді отримала чек без жодних прихованих доплат.»</p>
+            </blockquote>
+            <p class="review-author">Олена, власниця Мурки</p>
+          </article>
+
+          <article class="review">
+            <blockquote>
+              <p>«Боню вичесали так, що вдома всі питали, у якому салоні ми були. А ще вона щодня гралася на вигулі й поверталася щасливою.»</p>
+            </blockquote>
+            <p class="review-author">Олег, власник Боні</p>
+          </article>
+
+          <article class="review">
+            <blockquote>
+              <p>«Ліра дуже перебірлива в їжі, тому я лишила свій корм і докладну інструкцію. Усе виконали точно, жодного разу не переплутали.»</p>
+            </blockquote>
+            <p class="review-author">Катерина, власниця Ліри</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave wave-3" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" focusable="false">
+        <path class="ribbon-1" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z"/>
+        <path class="ribbon-2" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,34)"/>
+        <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
+      </svg>
+    </div>
+
+
+
+    <section id="prices" class="section section-cream reveal reveal-down-to-up">
       <div class="container">
         <h2>Орієнтовні ціни</h2>
         <figure class="price-figure">
@@ -200,7 +369,7 @@
       </svg>
     </div>
 
-    <section id="booking" class="section section-teal">
+    <section id="booking" class="section section-teal reveal reveal-down-to-up">
       <div class="container booking-layout">
         <div class="booking-main">
           <h2>Як забронювати місце</h2>
@@ -212,6 +381,7 @@
             <li>При виїзді ви отримаєте чек із підсумковою вартістю та переліком послуг.</li>
           </ol>
           <p>Статуси бронювання: заброньовано, заселено, завершено, скасовано.</p>
+          <button type="button" class="btn btn-light" id="openModalButtonBottom">Замовити консультацію</button>
         </div>
 
         <aside class="info-box">
@@ -236,6 +406,7 @@
         <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
       </svg>
     </div>
+
   </main>
 
   <footer class="site-footer">
@@ -253,6 +424,13 @@
       <p class="copyright"><small>&copy; 2026 ПП «Хеппі Павз», зооготель «Happy Paws». Навчальний проєкт, Павлова Єлизавета Павлівна, група ПІ-31.</small></p>
     </div>
   </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button type="button" class="modal-close" id="closeModal" aria-label="Закрити вікно">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
 
 </body>
 </html>
