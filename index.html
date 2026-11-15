@@ -5,153 +5,253 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Happy Paws — зооготель для безпечної передержки домашніх тварин у Харкові.">
   <title>Happy Paws — зооготель для вашого улюбленця</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800&amp;family=Rubik+Bubbles&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Happy Paws</h1>
-    <p>Зооготель, де вашого улюбленця люблять так само, як і ви</p>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top">
+        <img src="images/logo.png" alt="Happy Paws" width="500" height="500">
+      </a>
 
-    <nav>
-      <h2>Навігація по сторінці</h2>
-      <ul>
-        <li><a href="#about">Про нас</a></li>
-        <li><a href="#services">Послуги</a></li>
-        <li><a href="#prices">Ціни</a></li>
-        <li><a href="#booking">Як забронювати</a></li>
-        <li><a href="#contacts">Контакти</a></li>
-      </ul>
-    </nav>
+      <nav class="main-nav">
+        <h2 class="visually-hidden">Навігація по сторінці</h2>
+        <ul>
+          <li><a href="#about">Про нас</a></li>
+          <li><a href="#services">Послуги</a></li>
+          <li><a href="#prices">Ціни</a></li>
+          <li><a href="#booking">Як забронювати</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
 
-    <section id="about">
-      <h2>Про зооготель</h2>
-      <p>
-        Зооготель «Happy Paws» (приватне підприємство «Хеппі Павз») — це приватний заклад
-        із надання послуг тимчасового перетримування, догляду, соціалізації та гігієнічного
-        обслуговування непродуктивних домашніх тварин.
-        Поки ви у відпустці, у відрядженні чи лікарні, ваш кіт або собака
-        отримує турботу, повноцінне харчування та щоденну увагу професійних доглядачів.
-      </p>
-      <p>
-        Для кожної тварини ми ведемо індивідуальну анкету: кличка, вид, порода, вік,
-        особливості раціону, алергії та дані ветеринарного паспорта.
-      </p>
-
-      <h3>Чому обирають нас</h3>
-      <ul>
-        <li>Просторі індивідуальні бокси з чистою підстилкою</li>
-        <li>Харчування за інструкціями власника</li>
-        <li>Щоденний журнал догляду з записами про самопочуття</li>
-        <li>Прозорий чек із переліком усіх додаткових послуг</li>
-        <li>Бронювання без накладок: один бокс — один гість у вибрані дати</li>
-      </ul>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Happy Paws</h1>
+          <p class="hero-lead">Зооготель, де вашого улюбленця люблять так само, як і ви</p>
+          <p>
+            Безпечна передержка, турбота та щоденна увага професійних доглядачів,
+            поки ви у відпустці чи відрядженні.
+          </p>
+          <a class="btn" href="#booking">Забронювати місце</a>
+          <a class="btn btn-outline" href="#services">Наші послуги</a>
+        </div>
+        <div class="hero-picture">
+          <img src="images/hero-scene.svg" alt="Веселі коти та собаки на зелених пагорбах" width="900" height="660">
+          <p class="badge">Бокси без накладок</p>
+        </div>
+      </div>
     </section>
 
-    <section id="services">
-      <h2>Наші послуги</h2>
+    <div class="wave wave-1" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" focusable="false">
+        <path class="ribbon-1" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z"/>
+        <path class="ribbon-2" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,34)"/>
+        <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
+      </svg>
+    </div>
 
-      <article>
-        <h3>Базове утримання</h3>
-        <p>
-          Проживання в боксі, триразове годування, чиста вода,
-          щоденне прибирання та спостереження за станом тварини.
-        </p>
-      </article>
+    <section id="about" class="section section-cream">
+      <div class="container about-layout">
+        <div class="about-text">
+          <h2>Про зооготель</h2>
+          <p>
+            Зооготель «Happy Paws» (приватне підприємство «Хеппі Павз») — це приватний заклад
+            із надання послуг тимчасового перетримування, догляду, соціалізації та гігієнічного
+            обслуговування непродуктивних домашніх тварин.
+            Поки ви у відпустці, у відрядженні чи лікарні, ваш кіт або собака
+            отримує турботу, повноцінне харчування та щоденну увагу професійних доглядачів.
+          </p>
+          <p>
+            Для кожної тварини ми ведемо індивідуальну анкету: кличка, вид, порода, вік,
+            особливості раціону, алергії та дані ветеринарного паспорта.
+          </p>
 
-      <article>
-        <h3>Груминг</h3>
-        <p>Купання, вичісування, підстригання кігтів та гігієнічна обробка.</p>
-      </article>
-
-      <article>
-        <h3>Індивідуальний вигул</h3>
-        <p>Додаткові прогулянки з доглядачем для активних собак.</p>
-      </article>
-
-      <article>
-        <h3>Спецдогляд</h3>
-        <p>
-          Видача ліків за призначенням ветеринара, спеціальна дієта,
-          догляд за літніми та ослабленими тваринами.
-        </p>
-      </article>
+          <h3>Чому обирають нас</h3>
+          <ul class="check-list">
+            <li>Просторі індивідуальні бокси з чистою підстилкою</li>
+            <li>Харчування за інструкціями власника</li>
+            <li>Щоденний журнал догляду з записами про самопочуття</li>
+            <li>Прозорий чек із переліком усіх додаткових послуг</li>
+            <li>Бронювання без накладок: один бокс — один гість у вибрані дати</li>
+          </ul>
+        </div>
+        <div class="about-picture">
+          <img src="images/about-scene.svg" alt="Кіт і корги, що сидять на пагорбі" width="600" height="400">
+        </div>
+      </div>
     </section>
 
-    <section id="prices">
-      <h2>Орієнтовні ціни</h2>
-      <figure>
-        <table>
-          <thead>
-            <tr>
-              <th>Послуга</th>
-              <th>Вартість</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Проживання кота (за добу)</td>
-              <td>250 грн</td>
-            </tr>
-            <tr>
-              <td>Проживання собаки (за добу)</td>
-              <td>400 грн</td>
-            </tr>
-            <tr>
-              <td>Груминг</td>
-              <td>від 350 грн</td>
-            </tr>
-            <tr>
-              <td>Індивідуальний вигул</td>
-              <td>100 грн</td>
-            </tr>
-          </tbody>
-        </table>
-        <figcaption>Таблиця 1 — Орієнтовні ціни на послуги Happy Paws (остаточна вартість розраховується при оформленні)</figcaption>
-      </figure>
+    <div class="wave wave-2" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" focusable="false">
+        <path class="ribbon-1" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z"/>
+        <path class="ribbon-2" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,34)"/>
+        <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
+      </svg>
+    </div>
+
+    <section id="services" class="section section-pink">
+      <div class="container">
+        <h2>Наші послуги</h2>
+
+        <div class="cards">
+          <article class="card">
+            <img class="card-icon" src="images/icon-paw.svg" alt="" width="120" height="120">
+            <h3>Базове утримання</h3>
+            <p>
+              Проживання в боксі, триразове годування, чиста вода,
+              щоденне прибирання та спостереження за станом тварини.
+            </p>
+          </article>
+
+          <article class="card">
+            <img class="card-icon" src="images/icon-sparkle.svg" alt="" width="120" height="120">
+            <h3>Груминг</h3>
+            <p>Купання, вичісування, підстригання кігтів та гігієнічна обробка.</p>
+          </article>
+
+          <article class="card">
+            <img class="card-icon" src="images/icon-bone.svg" alt="" width="120" height="120">
+            <h3>Індивідуальний вигул</h3>
+            <p>Додаткові прогулянки з доглядачем для активних собак.</p>
+          </article>
+
+          <article class="card">
+            <img class="card-icon" src="images/icon-flower.svg" alt="" width="120" height="120">
+            <h3>Спецдогляд</h3>
+            <p>
+              Видача ліків за призначенням ветеринара, спеціальна дієта,
+              догляд за літніми та ослабленими тваринами.
+            </p>
+          </article>
+
+          <article class="card">
+            <img class="card-icon" src="images/icon-star.svg" alt="" width="120" height="120">
+            <h3>Соціалізація</h3>
+            <p>Ігри та спілкування з іншими тваринами й людьми під наглядом доглядача.</p>
+          </article>
+
+          <article class="card">
+            <img class="card-icon" src="images/icon-fish.svg" alt="" width="120" height="120">
+            <h3>Щоденний звіт</h3>
+            <p>Записи про годування, вигул, поведінку та самопочуття вашого улюбленця.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="booking">
-      <h2>Як забронювати місце</h2>
-      <ol>
-        <li>Зателефонуйте або напишіть адміністратору рецепції.</li>
-        <li>Повідомте дати перебування, вид і кличку тварини.</li>
-        <li>Адміністратор перевірить вільні бокси на ці дати та оформить бронювання.</li>
-        <li>У день заїзду принесіть ветпаспорт і корм (за потреби).</li>
-        <li>При виїзді ви отримаєте чек із підсумковою вартістю та переліком послуг.</li>
-      </ol>
-      <p>Статуси бронювання: заброньовано, заселено, завершено, скасовано.</p>
+    <div class="wave wave-3" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" focusable="false">
+        <path class="ribbon-1" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z"/>
+        <path class="ribbon-2" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,34)"/>
+        <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
+      </svg>
+    </div>
+
+    <section id="prices" class="section section-cream">
+      <div class="container">
+        <h2>Орієнтовні ціни</h2>
+        <figure class="price-figure">
+          <table>
+            <thead>
+              <tr>
+                <th>Послуга</th>
+                <th>Вартість</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Проживання кота (за добу)</td>
+                <td>250 грн</td>
+              </tr>
+              <tr>
+                <td>Проживання собаки (за добу)</td>
+                <td>400 грн</td>
+              </tr>
+              <tr>
+                <td>Груминг</td>
+                <td>від 350 грн</td>
+              </tr>
+              <tr>
+                <td>Індивідуальний вигул</td>
+                <td>100 грн</td>
+              </tr>
+            </tbody>
+          </table>
+          <figcaption>Таблиця 1 — Орієнтовні ціни на послуги Happy Paws (остаточна вартість розраховується при оформленні)</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <aside>
-      <h2>Корисна інформація</h2>
-      <h3>Що взяти із собою</h3>
-      <ul>
-        <li>Ветеринарний паспорт із відмітками про щеплення</li>
-        <li>Улюблену іграшку або ковдру</li>
-        <li>Ліки та інструкцію з їх прийому</li>
-      </ul>
-      <p>
-        <a href="#contacts">Залишились питання? Дивіться контакти</a>
-      </p>
-    </aside>
+    <div class="wave wave-4" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" focusable="false">
+        <path class="ribbon-1" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z"/>
+        <path class="ribbon-2" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,34)"/>
+        <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
+      </svg>
+    </div>
 
+    <section id="booking" class="section section-teal">
+      <div class="container booking-layout">
+        <div class="booking-main">
+          <h2>Як забронювати місце</h2>
+          <ol class="steps">
+            <li>Зателефонуйте або напишіть адміністратору рецепції.</li>
+            <li>Повідомте дати перебування, вид і кличку тварини.</li>
+            <li>Адміністратор перевірить вільні бокси на ці дати та оформить бронювання.</li>
+            <li>У день заїзду принесіть ветпаспорт і корм (за потреби).</li>
+            <li>При виїзді ви отримаєте чек із підсумковою вартістю та переліком послуг.</li>
+          </ol>
+          <p>Статуси бронювання: заброньовано, заселено, завершено, скасовано.</p>
+        </div>
+
+        <aside class="info-box">
+          <h2>Корисна інформація</h2>
+          <h3>Що взяти із собою</h3>
+          <ul>
+            <li>Ветеринарний паспорт із відмітками про щеплення</li>
+            <li>Улюблену іграшку або ковдру</li>
+            <li>Ліки та інструкцію з їх прийому</li>
+          </ul>
+          <p>
+            <a href="#contacts">Залишились питання? Дивіться контакти</a>
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wave wave-5" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" focusable="false">
+        <path class="ribbon-1" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z"/>
+        <path class="ribbon-2" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,34)"/>
+        <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
+      </svg>
+    </div>
   </main>
 
-  <footer>
-    <section id="contacts">
-      <h2>Контакти</h2>
-      <address>
-        Зооготель «Happy Paws» (ПП «Хеппі Павз»)<br>
-        вул. Затишна, 14, Шевченківський район, м. Харків, 61000<br>
-        Телефон: <a href="tel:+380441234567">+38 (044) 123-45-67</a><br>
-        Email: <a href="mailto:info@happypaws.example">info@happypaws.example</a>
-      </address>
-      <p>Щодня з 08:00 до 20:00</p>
-    </section>
-    <p><small>&copy; 2026 ПП «Хеппі Павз», зооготель «Happy Paws». Навчальний проєкт, Павлова Єлизавета Павлівна, група ПІ-31.</small></p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <section id="contacts">
+        <h2>Контакти</h2>
+        <address>
+          Зооготель «Happy Paws» (ПП «Хеппі Павз»)<br>
+          вул. Затишна, 14, Шевченківський район, м. Харків, 61000<br>
+          Телефон: <a href="tel:+380441234567">+38 (044) 123-45-67</a><br>
+          Email: <a href="mailto:info@happypaws.example">info@happypaws.example</a>
+        </address>
+        <p>Щодня з 08:00 до 20:00</p>
+      </section>
+      <p class="copyright"><small>&copy; 2026 ПП «Хеппі Павз», зооготель «Happy Paws». Навчальний проєкт, Павлова Єлизавета Павлівна, група ПІ-31.</small></p>
+    </div>
   </footer>
 
 </body>
