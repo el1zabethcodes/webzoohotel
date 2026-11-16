@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Новини зооготелю Happy Paws: номерний фонд, сервіс, події та догляд за тваринами.">
+  <title>Новини — зооготель Happy Paws</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+
+  <!-- день 6-8: bootstrap з cdn перед власними стилями -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap-custom.css">
+  <link rel="stylesheet" href="css/news.css">
+</head>
+<body class="news-page">
+
+  <!-- день 6-8: компонент navbar -->
+  <nav class="navbar navbar-expand-lg" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo-paws-light.png" alt="" width="242" height="256">
+        <span>Happy Paws</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Відкрити меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Головна</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Послуги</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#prices">Ціни</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="news.html">Новини</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contacts">Контакти</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+
+    <div class="row">
+      <div class="col-12 col-lg-9">
+        <h1 id="pageTitle">Новини зооготелю</h1>
+        <p class="lead">Що нового в Happy Paws: номерний фонд, сервіс для власників та життя наших постояльців.</p>
+
+        <!-- день 6-8: jquery-повідомлення -->
+        <p class="status-message" id="statusMessage">Стрічку новин оновлено 10 листопада 2026 року.</p>
+
+        <p id="selectionHint" class="selection-hint">Натисніть на картку, щоб обрати новину.</p>
+
+        <button type="button" class="btn site-btn" id="toggleInfo">Детальніше про стрічку</button>
+
+        <div class="extra-info" id="extraInfo">
+          <h2 class="h5">Як ми ведемо стрічку новин</h2>
+          <p>
+            Ми публікуємо новини двічі на місяць: зміни в номерному фонді, нові послуги,
+            події для власників і сезонні правила догляду. Кожну публікацію готує
+            адміністратор рецепції разом із доглядачами зміни.
+          </p>
+          <p class="mb-0">
+            Хочете отримувати новини на пошту? Напишіть на
+            <a href="mailto:happypaws@gmail.com">happypaws@gmail.com</a> з темою «Новини».
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <!-- день 6-8: фільтр категорій -->
+        <div class="news-filter" role="group" aria-label="Фільтр новин за категорією">
+          <button type="button" class="filter-button is-active" data-category="all">Усі</button>
+          <button type="button" class="filter-button" data-category="rooms">Номерний фонд</button>
+          <button type="button" class="filter-button" data-category="service">Сервіс</button>
+          <button type="button" class="filter-button" data-category="events">Події</button>
+          <button type="button" class="filter-button" data-category="care">Догляд</button>
+          <button type="button" class="filter-button" data-category="play">Ігрові зони</button>
+        </div>
+        <p class="news-count" id="newsCount"></p>
+      </div>
+    </div>
+
+    <!-- день 6-8: адаптивна сітка новин -->
+    <div class="row g-4" id="newsGrid">
+
+      <!-- день 6-8: картка новини з badge -->
+      <div class="col-12 col-md-6 col-lg-4 news-item" data-category="rooms">
+        <article class="card h-100 news-card">
+          <img src="images/news/news-1.jpg" class="card-img-top" alt="Модульні бокси для котів із дерев'яними полицями та окремими дверцятами">
+          <div class="card-body d-flex flex-column">
+            <span class="badge text-bg-primary align-self-start">Номерний фонд</span>
+            <time class="news-date" datetime="2026-11-10">10 листопада 2026</time>
+            <h2 class="h5 card-title">Happy Paws відкрив окреме крило для котів</h2>
+            <p class="card-text">Дванадцять нових боксів із вертикальними полицями та окремим входом.</p>
+            <p class="news-full">
+              Котяче крило повністю відокремлене від собачого, тому тварини не чують одна одну і заселення проходить спокійніше. У кожному боксі є полиці для лазіння, окреме місце для лотка та миска з проточною водою.
+              <a class="article-link" href="news-cat-wing.html">Повна новина</a>
+            </p>
+            <a class="read-more mt-auto" href="#">Читати далі</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 news-item" data-category="play">
+        <article class="card h-100 news-card">
+          <img src="images/news/news-5.jpg" class="card-img-top" alt="Світла зона відпочинку з лежанками, кімнатними рослинами та гірляндою, на полицях сидять коти">
+          <div class="card-body d-flex flex-column">
+            <span class="badge text-bg-success align-self-start">Ігрові зони</span>
+            <time class="news-date" datetime="2026-11-07">7 листопада 2026</time>
+            <h2 class="h5 card-title">Відкрито спільну зону відпочинку для котів</h2>
+            <p class="card-text">М'які лежанки, драбинки та зелений куточок для гостей, які не бояться компанії.</p>
+            <p class="news-full">
+              Зона працює за розкладом: коти заходять туди невеликими групами по чотири-п'ять тварин і завжди під наглядом доглядача. Для тих, хто любить самоту, залишаються індивідуальні бокси та окремі години відпочинку.
+              <a class="article-link" href="news-cat-lounge.html">Повна новина</a>
+            </p>
+            <a class="read-more mt-auto" href="#">Читати далі</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 news-item" data-category="service">
+        <article class="card h-100 news-card">
+          <img src="images/news/news-2.jpg" class="card-img-top" alt="Чорний лабрадор отримує частування з рук власника">
+          <div class="card-body d-flex flex-column">
+            <span class="badge text-bg-info align-self-start">Сервіс</span>
+            <time class="news-date" datetime="2026-11-03">3 листопада 2026</time>
+            <h2 class="h5 card-title">Журнал догляду тепер доступний онлайн</h2>
+            <p class="card-text">Власник бачить годування, прогулянки та нотатки доглядача за кожну добу.</p>
+            <p class="news-full">
+              Під час заселення адміністратор видає посилання на журнал конкретної тварини. Доглядач заповнює його протягом зміни, тому записи з'являються майже одразу. Посилання перестає працювати через тиждень після виїзду.
+              <a class="article-link" href="news-care-log.html">Повна новина</a>
+            </p>
+            <a class="read-more mt-auto" href="#">Читати далі</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 news-item" data-category="events">
+        <article class="card h-100 news-card">
+          <img src="images/news/news-8.jpg" class="card-img-top" alt="Пудель у капелюсі відьми на тлі кульок із написом BOO">
+          <div class="card-body d-flex flex-column">
+            <span class="badge text-bg-primary align-self-start">Події</span>
+            <time class="news-date" datetime="2026-11-01">1 листопада 2026</time>
+            <h2 class="h5 card-title">Геловін у Happy Paws: як минув фотофлешмоб</h2>
+            <p class="card-text">Власники надіслали фото улюбленців у костюмах, а ми переодягнули постояльців.</p>
+            <p class="news-full">
+              Ми підтримали традицію і в самому готелі: з письмової згоди власників доглядач одягав костюм лише на кілька хвилин для зйомки, а тваринам, які цього не любили, костюм не вдягали взагалі. Усі учасники отримали купон на знижку 10% на наступне бронювання. Фотографії зібрані в галереї нижче.
+              <a class="article-link" href="news-halloween-results.html">Повна новина</a>
+            </p>
+            <a class="read-more mt-auto" href="#">Читати далі</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 news-item" data-category="play">
+        <article class="card h-100 news-card">
+          <img src="images/news/news-6.jpg" class="card-img-top" alt="Стіна з поличками, підвісним містком, гамаками та великим біговим колесом для котів">
+          <div class="card-body d-flex flex-column">
+            <span class="badge text-bg-success align-self-start">Ігрові зони</span>
+            <time class="news-date" datetime="2026-10-31">31 жовтня 2026</time>
+            <h2 class="h5 card-title">Настінний ігровий комплекс із біговим колесом</h2>
+            <p class="card-text">Полички, підвісний місток, гамаки та велике колесо для активних котів.</p>
+            <p class="news-full">
+              Комплекс займає цілу стіну ігрової кімнати: кіт може піднятися під стелю, перейти підвісним містком і розім'ятися в біговому колесі. Доглядач стежить за часом на колесі, щоб тварина не перевтомилася.
+              <a class="article-link" href="news-cat-wall.html">Повна новина</a>
+            </p>
+            <a class="read-more mt-auto" href="#">Читати далі</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 news-item" data-category="events">
+        <article class="card h-100 news-card">
+          <img src="images/news/news-3.jpg" class="card-img-top" alt="Пухнастий шпіц дивиться вбік">
+          <div class="card-body d-flex flex-column">
+            <span class="badge text-bg-primary align-self-start">Події</span>
+            <time class="news-date" datetime="2026-10-28">28 жовтня 2026</time>
+            <h2 class="h5 card-title">Безкоштовні консультації зоопсихолога у грудні</h2>
+            <p class="card-text">Щосуботи фахівець розбирає тривожність під час розлуки з власником.</p>
+            <p class="news-full">
+              Консультації тривають сорок хвилин і проходять у кімнаті для знайомства. Фахівець підкаже, як підготувати улюбленця до перших заїздів і що взяти з дому, щоб тварина швидше звикла до боксу. Запис у адміністратора рецепції.
+              <a class="article-link" href="news-zoopsy.html">Повна новина</a>
+            </p>
+            <a class="read-more mt-auto" href="#">Читати далі</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 news-item" data-category="events">
+        <article class="card h-100 news-card">
+          <img src="images/news/news-7.jpg" class="card-img-top" alt="Три коти в помаранчевих костюмах гарбуза сидять поруч">
+          <div class="card-body d-flex flex-column">
+            <span class="badge text-bg-primary align-self-start">Події</span>
+            <time class="news-date" datetime="2026-10-20">20 жовтня 2026</time>
+            <h2 class="h5 card-title">Оголошуємо фотофлешмоб «Геловін у Happy Paws»</h2>
+            <p class="card-text">Надсилайте фото улюбленця в костюмі до 31 жовтня та отримайте купон на знижку.</p>
+            <p class="news-full">
+              Фото надсилайте на пошту готелю або показуйте адміністратору рецепції. Якщо тварина саме гостює в нас, ми можемо вбрати її самі: костюм надягаємо лише за згодою власника, на кілька хвилин і під наглядом доглядача. Усі учасники отримають купон на знижку, а найкращі кадри покажемо в стрічці новин.
+              <a class="article-link" href="news-halloween-announce.html">Повна новина</a>
+            </p>
+            <a class="read-more mt-auto" href="#">Читати далі</a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+    <!-- день 6-8: галерея на сітці bootstrap -->
+    <section id="halloween" class="halloween">
+      <div class="row">
+        <div class="col-12 col-lg-9">
+          <h2>Зірки нашого фотофлешмобу</h2>
+          <p>
+            Кадри надіслали власники наших постояльців, а частину знімків
+            зробили доглядачі просто в готелі. Костюм надягали лише за згодою власника
+            і лише на кілька хвилин, щоб тварина не нервувалася.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-1.jpg" alt="Золотистий ретривер у костюмі поні" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-2.jpg" alt="Пудель у костюмі броколі" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-3.jpg" alt="Чорний кіт у костюмі тако" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-4.jpg" alt="Сіамський кіт у в'язаному костюмі ягняти" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-5.jpg" alt="Сфінкс у рожевому костюмі зайчика" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-6.jpg" alt="Сфінкс у в'язаній шапці-гарбузі" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-7.jpg" alt="Цуценя пуделя в костюмі тигреняти" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-8.jpg" alt="Такса в костюмі собачки-пружинки" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-9.jpg" alt="Вест-гайленд-тер'єр у костюмі супергероя" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-10.jpg" alt="Пудель із паперовим відерцем на шиї та іграшковою куркою" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-11.jpg" alt="Пудель у капелюсі відьми з накидкою та гарбузом" loading="lazy">
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="hw-photo" src="images/halloween/hw-12.jpg" alt="Пудель у капелюсі відьми на тлі кульок із написом BOO" loading="lazy">
+        </div>
+      </div>
+
+      <p class="hw-note">Усі учасники флешмобу отримали купон на знижку 10% на наступне бронювання.</p>
+    </section>
+
+
+  </main>
+
+  <div class="wave wave-6" aria-hidden="true">
+    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" focusable="false">
+      <path class="ribbon-1" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z"/>
+      <path class="ribbon-2" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,34)"/>
+      <path class="wave-to" d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 V160 H0 Z" transform="translate(0,68)"/>
+    </svg>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <section id="contacts">
+        <h2>Контакти</h2>
+        <address>
+          Зооготель «Happy Paws» (ПП «Хеппі Павз»)<br>
+          вул. Затишна, 14, Шевченківський район, м. Харків, 61000<br>
+          Телефон: <a href="tel:+380963693369">+38 (096) 369-33-69</a><br>
+          Email: <a href="mailto:happypaws@gmail.com">happypaws@gmail.com</a>
+        </address>
+        <p>Щодня з 08:00 до 20:00</p>
+        <p><a href="index.html">Повернутися на головну сторінку</a></p>
+      </section>
+      <p class="copyright"><small>&copy; <span id="year">2026</span> ПП «Хеппі Павз», зооготель «Happy Paws». Навчальний проєкт з практики WEB технологій, Павлова Єлизавета Павлівна, група ПІ-31.</small></p>
+    </div>
+  </footer>
+
+  <!-- день 6-8: скрипти в кінці body -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/jquery-effects.js"></script>
+</body>
+</html>

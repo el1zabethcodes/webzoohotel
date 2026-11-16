@@ -1,4 +1,5 @@
 /* happy paws */
+/* день 2-3: оформлення, flexbox, grid, медіа-запити */
 
 /* база */
 * {
@@ -7,6 +8,7 @@
 
 :root {
   --pink: #EFA8AC;
+  --pink-deep: #E0757E;
   --lace: #F3EBDE;
   --teal: #1A615D;
   --powder: #A7B8CA;
@@ -39,10 +41,11 @@ h3 {
 }
 
 h1 {
-  font-family: "Rubik Bubbles", var(--font-head);
-  font-size: 84px;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -122,6 +125,11 @@ ol {
 }
 
 /* хвилі */
+.wave-p2p {
+  position: relative;
+  z-index: 2;
+}
+
 .wave {
   line-height: 0;
   background-color: var(--from);
@@ -180,6 +188,42 @@ ol {
   --to: var(--pink);
 }
 
+.wave-p2p {
+  --from: var(--pink);
+  --r1: var(--powder);
+  --r2: var(--sage);
+  --to: var(--pink);
+}
+
+.wave-p2l {
+  --from: var(--pink);
+  --r1: var(--powder);
+  --r2: var(--sage);
+  --to: var(--lace);
+}
+
+.wave-l2p {
+  --from: var(--lace);
+  --r1: var(--sage);
+  --r2: var(--powder);
+  --to: var(--pink);
+}
+
+.wave-l2p svg {
+  transform: scaleX(-1);
+}
+
+.wave-head {
+  --from: #F6CDD0;
+  --r1: var(--sage);
+  --r2: var(--powder);
+  --to: var(--pink);
+}
+
+.wave-head svg {
+  height: 60px;
+}
+
 .wave-2 svg,
 .wave-4 svg {
   transform: scaleX(-1);
@@ -188,8 +232,8 @@ ol {
 /* кнопки */
 .btn {
   display: inline-block;
-  margin: 8px 12px 8px 0;
-  padding: 14px 34px;
+  margin: 6px 10px 6px 0;
+  padding: 13px 32px;
   font-family: var(--font-head);
   font-size: 20px;
   font-weight: 600;
@@ -208,6 +252,8 @@ ol {
 .btn-outline {
   color: var(--teal);
   background-color: transparent;
+  border-width: 3px;
+  font-weight: 700;
 }
 
 .btn-outline:hover {
@@ -217,16 +263,16 @@ ol {
 
 /* шапка */
 .site-header {
-  background-color: var(--pink);
+  background-color: #F6CDD0;
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  gap: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .logo {
@@ -238,14 +284,15 @@ ol {
 
 .logo img {
   display: block;
-  width: 60px;
-  height: 60px;
+  width: auto;
+  height: 46px;
 }
 
 .logo-text {
-  font-family: "Rubik Bubbles", var(--font-head);
-  font-size: 34px;
-  font-weight: 400;
+  font-family: var(--font-head);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   color: var(--teal);
 }
 
@@ -260,9 +307,9 @@ ol {
 
 .main-nav a {
   display: block;
-  padding: 10px 16px;
+  padding: 8px 14px;
   font-family: var(--font-head);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
   text-decoration: none;
   color: var(--teal);
@@ -277,102 +324,122 @@ ol {
 
 /* hero */
 .hero {
-  padding: 24px 0 24px;
+  padding: 0 0 28px;
   background-color: var(--pink);
+  background-image: url("../images/paw-pattern.svg");
+  background-size: 260px 260px;
 }
 
 .hero-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 24px;
 }
 
 .hero-text {
-  flex: 1 1 42%;
+  flex: 0 1 36%;
 }
 
 .hero-lead {
+  margin-bottom: 10px;
   font-family: var(--font-head);
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 1.3;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.25;
   color: var(--teal);
+}
+
+.hero-text p {
+  max-width: 460px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #2F4F4C;
 }
 
 .hero-picture {
   position: relative;
-  flex: 1 1 58%;
+  flex: 1 1 64%;
 }
 
 .hero-picture img {
   display: block;
   width: 100%;
-  border-radius: 0 0 48px 48px;
-}
-
-/* бейдж */
-.badge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 150px;
-  margin: 0;
-  padding: 24px;
-  font-family: var(--font-head);
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 1.15;
-  text-align: center;
-  color: var(--teal);
-  background-image: url("../images/scallop-sage.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  transform: rotate(-10deg);
+  height: auto;
 }
 
 /* про нас */
 .about-layout {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   align-items: center;
-  gap: 48px;
+  gap: 32px;
+}
+
+#about {
+  padding: 24px 0 32px;
+}
+
+.about-picture {
+  margin-left: -70px;
+}
+
+.about-text h2 {
+  margin-bottom: 14px;
 }
 
 .about-picture img {
   display: block;
   width: 100%;
-  border-radius: 0 0 48px 48px;
+  height: auto;
+}
+
+.about-lead {
+  font-family: var(--font-head);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--teal);
+}
+
+.about-text p {
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.about-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-text h3 {
+  margin-top: 40px;
+  margin-bottom: 18px;
 }
 
 .check-list {
+  margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
 
 .check-list li {
   position: relative;
-  margin-bottom: 10px;
-  padding: 10px 20px 10px 56px;
+  margin-bottom: 9px;
+  padding: 2px 0 2px 40px;
   font-weight: 600;
-  background-color: var(--sage);
-  border-radius: 999px;
+  line-height: 1.45;
 }
 
 .check-list li::before {
   content: "\2713";
   position: absolute;
-  top: 50%;
-  left: 12px;
-  width: 30px;
-  height: 30px;
-  margin-top: -15px;
+  top: 1px;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  font-size: 15px;
   font-weight: 800;
-  line-height: 30px;
+  line-height: 26px;
   text-align: center;
   color: var(--lace);
   background-color: var(--teal);
@@ -386,72 +453,144 @@ ol {
   gap: 28px;
 }
 
-.card {
+.service-card {
   padding: 28px 28px 24px;
   background-color: var(--lace);
   border: 4px solid var(--teal);
   border-radius: 36px;
 }
 
-.card:hover {
+.service-card:hover {
   background-color: var(--sage);
 }
 
-.card-icon {
+.service-card-main {
+  background-color: var(--sage);
+}
+
+.service-card-main:hover {
+  background-color: var(--lace);
+}
+
+.service-mark {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 5px 16px;
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--lace);
+  background-color: var(--teal);
+  border-radius: 999px;
+}
+
+.service-icon {
   display: block;
   width: 84px;
   height: 84px;
   margin-bottom: 12px;
 }
 
-.card p {
+.service-card p {
   margin-bottom: 0;
 }
 
 /* ціни */
-.price-figure {
+.section-lead {
+  max-width: 640px;
+  margin: -6px 0 28px;
+  font-size: 19px;
+  color: #2F4F4C;
+}
+
+.price-table-wrap {
   max-width: 760px;
-  margin: 0;
-}
-
-table {
-  width: 100%;
   overflow: hidden;
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 4px solid var(--teal);
-  border-radius: 28px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(18, 63, 60, 0.08);
 }
 
-th,
-td {
-  padding: 16px 24px;
-  text-align: left;
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FBF7F0;
 }
 
-th {
+.price-table thead th {
+  padding: 18px 24px;
   font-family: var(--font-head);
-  font-size: 22px;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: left;
   color: var(--lace);
   background-color: var(--teal);
 }
 
-td {
+.price-table thead th:last-child {
+  text-align: right;
+}
+
+.price-table tbody th {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  font-family: var(--font-head);
+  font-size: 19px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--teal);
+}
+
+.price-name {
+  display: block;
+}
+
+.price-name span {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #5C6F6D;
+}
+
+.price-table tbody td {
+  padding: 20px 24px;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.price-table tbody tr + tr {
+  border-top: 1px solid rgba(26, 97, 93, 0.14);
+}
+
+.price-row-main {
+  background-color: rgba(184, 200, 151, 0.42);
+}
+
+.price-value {
+  font-family: var(--font-head);
+  font-size: 26px;
   font-weight: 700;
+  line-height: 1.15;
+  white-space: nowrap;
+  color: var(--teal);
 }
 
-tbody tr:nth-child(odd) td {
-  background-color: var(--powder);
+.price-icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
 }
 
-tbody tr:nth-child(even) td {
-  background-color: var(--sage);
-}
-
-figcaption {
-  margin-top: 14px;
-  font-size: 16px;
-  font-style: italic;
+.price-note {
+  margin: 18px 0 0;
+  font-size: 15px;
+  color: #5C6F6D;
 }
 
 /* бронювання */
@@ -524,8 +663,69 @@ figcaption {
 
 /* підвал */
 .site-footer {
-  padding: 24px 0 24px;
+  padding: 40px 0 20px;
   background-color: var(--pink);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr 0.8fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.footer-brand img {
+  display: block;
+  width: auto;
+  height: 64px;
+}
+
+.footer-name {
+  margin: 12px 0 6px;
+  font-family: var(--font-head);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--teal);
+}
+
+.footer-slogan {
+  margin: 0;
+  max-width: 280px;
+}
+
+.site-footer h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.footer-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.footer-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  fill: var(--teal);
+}
+
+.footer-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav li {
+  margin-bottom: 8px;
+}
+
+.footer-nav a {
+  font-weight: 600;
 }
 
 address {
@@ -534,9 +734,11 @@ address {
 }
 
 .copyright {
-  margin: 32px 0 0;
-  padding-top: 16px;
-  border-top: 4px solid var(--teal);
+  margin: 28px 0 0;
+  padding-top: 14px;
+  font-size: 14px;
+  color: #5C6F6D;
+  border-top: 3px solid rgba(26, 97, 93, 0.35);
 }
 
 
@@ -616,8 +818,9 @@ address {
 .benefit {
   display: grid;
   grid-template-columns: 320px 1fr;
-  align-items: center;
+  align-items: stretch;
   gap: 28px;
+  min-height: 252px;
   padding: 20px;
   background-color: var(--pink);
   border: 4px solid var(--teal);
@@ -631,13 +834,22 @@ address {
 .benefit-photo {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 100%;
+  min-height: 220px;
   object-fit: cover;
   background-color: var(--powder);
   border-radius: 28px;
 }
 
+.benefit-text {
+  align-self: center;
+}
+
 .benefit-text p {
+  margin-bottom: 12px;
+}
+
+.benefit-text p:last-child {
   margin-bottom: 0;
 }
 
@@ -724,6 +936,21 @@ address {
 
 .review blockquote p {
   margin: 0;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.review:nth-child(3n+2) {
+  background-color: var(--sage);
+}
+
+.review:nth-child(3n+2) .review-author {
+  color: var(--teal);
+}
+
+.review:nth-child(3n) blockquote p {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .review-author {
@@ -975,6 +1202,21 @@ button.btn {
     grid-template-columns: 1fr;
   }
 
+
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .benefit {
+    min-height: 0;
+  }
+
+  .about-picture {
+    margin-left: 0;
+  }
+
   .hero-inner {
     flex-direction: column;
     text-align: center;
@@ -1034,8 +1276,7 @@ button.btn {
   }
 
   .logo img {
-    width: 80px;
-    height: 80px;
+    height: 40px;
   }
 
   .main-nav ul {
@@ -1058,15 +1299,23 @@ button.btn {
     font-size: 18px;
   }
 
-  .badge {
-    width: 100px;
-    height: 100px;
-    padding: 14px;
-    font-size: 13px;
-  }
-
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .price-table tbody th,
+  .price-table tbody td,
+  .price-table thead th {
+    padding: 14px 16px;
+  }
+
+  .price-value {
+    font-size: 21px;
+  }
+
+  .price-table tbody th {
+    font-size: 17px;
+    gap: 10px;
   }
 
   .logo img {

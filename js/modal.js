@@ -1,4 +1,4 @@
-/* логіка форми запиту */
+/* день 4-5: форма запиту та її валідація */
 
 console.log("JavaScript підключено успішно");
 
@@ -35,7 +35,6 @@ function initializeModalForm(form) {
     return;
   }
 
-  /* getElementById */
   const firstName = document.getElementById("firstName");
   const lastName = document.getElementById("lastName");
   const email = document.getElementById("email");
@@ -45,10 +44,8 @@ function initializeModalForm(form) {
   const clearButton = document.getElementById("clearButton");
   const errorBox = document.getElementById("formError");
 
-  /* querySelector */
   const submitButton = form.querySelector(".submit-button");
 
-  /* querySelectorAll */
   const inputFields = form.querySelectorAll(".form-group input, .form-group select, .form-group textarea");
   const formButtons = form.querySelectorAll(".btn");
 

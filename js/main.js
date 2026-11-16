@@ -1,4 +1,4 @@
-/* інтерактивність головної сторінки */
+/* день 4-5: модальне вікно, меню, анімація появи */
 
 document.addEventListener("DOMContentLoaded", function () {
 
